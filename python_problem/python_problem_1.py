@@ -14,6 +14,7 @@ while (True):
                 print(f'playerA: {i + 1 + num}')
             num += number
     else:
+        print('playerA win!')
         break
 
     if num < 31:
@@ -30,4 +31,5 @@ while (True):
                 print(f'playerB: {i + 1 + num}')
             num += number
     else:
+        print('PlayerB win!')
         break
