@@ -8,4 +8,7 @@ while True:
         print('1, 2, 3 중 하나를 입력하세요')
         continue
     else:
+        num = int(a)
+        for number in range(num):
+            print(f'playerA: {number + 1}')
         break
