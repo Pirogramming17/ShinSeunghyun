@@ -1,0 +1,478 @@
+* {
+  box-sizing: border-box;
+}
+/*css에서 모든 태그를 의미*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+/*브라우저가 기본적으로 주는 요소 0으로 만들기*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/* 선택자(selector) */
+/*css는 부모, 조상의 css에 덮어 씌울 수 있음 = cascading*/
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+/* id는 #, class는 . */
+
+#fixed {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.relative {
+  position: relative;
+}
+
+.center-align {
+  /* #앞에는 div 생략(div만 가능, header같은 건 안됨) */
+  margin: 0 auto;
+  width: 1080px;
+  /*모니터 픽셀 중 1080을 차지(상대적 개념)*/
+}
+
+header {
+  height: 170px;
+}
+
+#header-top {
+  float: right;
+  margin-top: 8px;
+}
+
+#header-top span {
+  color: #888;
+  letter-spacing: -1px;
+  font-size: 11px;
+  line-height: 22px;
+}
+
+#header-search {
+  clear: both;
+  padding-top: 45px;
+}
+
+#header-search a {
+  clear: both;
+  /*float 해제해주려면 clear: both 써야 함*/
+  padding-top: 20px;
+}
+
+#header-search h1 {
+  /*기존의 아이디를 상속받는 태그(자식)를 이렇게 불러올 수 있음*/
+  /*하지만 자식이든 자손이든 상관 x, 꺽쇄 안써도 됨*/
+  width: 220px;
+  height: 57px;
+  display: inline-block;
+  /*div는 기본값이 block -> inline-block해서 없애줌*/
+  background-position: 0 -158px;
+  background-size: 430px 415px;
+  background-image: url("./네이버 로고.png");
+  vertical-align: middle;
+  position: relative;
+  top: -5px;
+  left: 1px;
+}
+
+/*#header-center h1 {*/
+/*이건 자손 선택자*/
+/*}*/
+
+#header-search h1 span {
+  display: none;
+}
+
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  margin-left: 18px;
+  /*padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  padding-right: 0;*/
+  padding: 12px 0 12px 10px;
+  /*시계 방향*/
+  width: 474px;
+  height: 50px;
+  display: inline-block;
+  border: 2px solid #03cf5d; /* hex 표기법 */
+  /*필드셋과 h1의 블록을 없애 네이버 로고와 검색창을 한줄에*/
+  box-sizing: border-box;
+  /*높이, 너비를 콘텐트에 맞추느냐, 보더에 맞추느냐를 결정*/
+  vertical-align: middle;
+  /*세로 정렬 맟주기 -> 개발자 도구에서 여러 값들을 미리 만져본 뒤 정하기*/
+  /*inline, inline-block에서만 가능*/
+  position: relative;
+  /*붙길 원하는 곳에 position: relative를 넣어야 함*/
+}
+
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none;
+  vertical-align: top;
+  width: 395px;
+  height: 23px;
+  /*브라우저가 넣어준 기본 css인 검색창 클릭 시 테두리 없앰*/
+}
+
+#header-search fieldset button {
+  width: 50px;
+  height: 48px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#search-keyboard {
+  background-image: url("./네이버 구 로고.png");
+  background-repeat: no-repeat;
+  background-position: -31px -60px;
+  width: 23px;
+  height: 11px;
+  display: inline-block;
+  margin: 0px -37px;
+  /*위아래가 0, 좌우가 6*/
+  vertical-align: middle;
+}
+
+#search-history {
+  background-image: url("./네이버 구 로고.png");
+  background-repeat: no-repeat;
+  background-position: -87px -60px;
+  width: 9px;
+  height: 4px;
+  display: inline-block;
+  margin: 0 40px;
+  vertical-align: middle;
+}
+
+#search-image {
+  background-image: url("./네이버 로고 최신.png");
+  /*background-position: -837px 3px;
+  background-repeat: no-repeat;
+  width: 51px;
+  height: 48px;
+  display: inline-block;
+  margin: 0px;*/
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  background-position: -420px 0;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  background-size: 457px 434px;
+  margin: 10px;
+  /*네이버 웹속성 데이터가 더 정확 -> 어디서 차이가 난 건지는 추후 확인*/
+}
+
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6;
+  border-bottom: 1px solid #d1d8e4;
+}
+
+/* center-align이 아니라 nav 아래 둬야함*/
+nav ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 -1px 4px;
+  list-style: none;
+  /*리스트 앞에 .(점)없애주는 기능*/
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li span:first-child {
+  height: 16px;
+  display: inline-block;
+  background-image: url("./네이버 메뉴 로고.png");
+  background-repeat: no-repeat;
+  margin-left: 10px;
+}
+/*공통 요소는 따로 정리*/
+
+nav li:first-child span:first-child {
+  /*각 list의 n번째 자식*/
+  width: 25px;
+  background-position: 0 -285px;
+  margin-left: 0;
+}
+/*css 우선순위 id 금메달, class, 의사클래스 은메달, 태그 동메달*/
+/*제로초 블로그 css 우선순위 한번 보기*/
+
+nav li:nth-child(2) span:first-child {
+  width: 27px;
+  background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+  width: 40px;
+  background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+  width: 40px;
+  background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+  width: 26px;
+  background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+  width: 25px;
+  background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:first-child {
+  width: 35px;
+  background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+  width: 26px;
+  background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+  width: 26px;
+  background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+  width: 26px;
+  background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+  width: 39px;
+  background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+  width: 26px;
+  background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+  width: 26px;
+  background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+  width: 26px;
+  background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+  width: 13px;
+  background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+  width: 26px;
+  background-position: -279px 0;
+}
+
+.nav-divider {
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
+}
+
+#search-ranking {
+  position: absolute;
+  top: 16px;
+  right: 100px;
+}
+
+#rank-number {
+  margin-top: -9px;
+  color: #00ab33;
+  font-size: 16px;
+}
+
+main {
+  background-color: #f2f4f7;
+  display: inline-block;
+  width: 100%;
+}
+
+#main-centered {
+  padding: 8px 10px 8px;
+  width: 1100px;
+}
+
+#main-first-block {
+  display: inline-block;
+  width: 100%;
+}
+
+#main-ad {
+  float: left;
+  width: 740px;
+  height: 120px;
+  background: #555;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+#main-login {
+  float: left;
+  width: 332px;
+  height: 120px;
+  vertical-align: top;
+  background-color: white;
+  margin-bottom: 8px;
+}
+
+#main-second-block .inline-block:first-child {
+  width: 740px;
+}
+
+#main-second-block .inline-block:last-child {
+  width: 332px;
+  vertical-align: top;
+}
+
+#main-ytn {
+  display: inline-block;
+  width: 740px;
+  height: 46px;
+  background-color: white;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+#main-ytn h3,
+#main-ytn ol {
+  display: inline-block;
+}
+
+#main-newsstand {
+  display: inline-block;
+  width: 740px;
+  height: 246px;
+  background-color: white;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+#main-newsstand h3 {
+  height: 45px;
+  border-bottom: 1px solid #ebeef3;
+}
+
+#main-newsstand ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main-newsstand li {
+  float: left;
+  width: 123px;
+  height: 67px;
+  border-right: 1px solid #f1f3f6;
+  border-bottom: 1px solid #f1f3f6;
+  text-align: center;
+}
+
+#main-newsstand li img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  /*꼭 해줘야 함*/
+}
+
+#main-weather {
+  display: inline-block;
+  width: 332px;
+  height: 142px;
+  background-color: white;
+  margin-bottom: 8px;
+}
+
+#main-second-ad {
+  display: inline-block;
+  width: 332px;
+  height: 150px;
+  background: #555;
+  margin-bottom: 8px;
+}
+
+#main-category {
+  float: left;
+  width: 740px;
+  height: 837px;
+  background: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+#main-shopping {
+  float: left;
+  width: 332px;
+  height: 837px;
+  background: white;
+  margin-bottom: 8px;
+}
+
+#main-fourth-block {
+  display: inline-block;
+  width: 100%;
+}
+
+#main-event {
+  float: left;
+  width: 740px;
+  height: 130px;
+  background: white;
+  vertical-align: top;
+  margin-right: 8px;
+}
+
+#main-third-ad {
+  float: left;
+  width: 332px;
+  height: 130px;
+  background: #555;
+}

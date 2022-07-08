@@ -1,0 +1,30 @@
+/* 선택자(selector) */
+/*css는 부모, 조상의 css에ㅔ 덮어 씌워질 수 있음*/
+#header-center {
+  /* #앞에는 div 생략(div만 가능, header같은 건 안됨) */
+  margin: 0 auto;
+  width: 1080px;
+  /*모니터 픽셀 중 1080을 차지(상대적 개념)*/
+}
+
+#header-search > h1 {
+  /*기존의 아이디를 상속받는 태그(자식)를 이렇게 불러올 수 있음*/
+  /*하지만 자식이든 자손이든 상관 x, 꺽쇄 안써도 됨*/
+  width: 280px;
+  display: inline-block;
+  /*div는 기본값이 block -> inline-block해서 없애줌*/
+}
+
+/*#header-center h1 {*/
+/*이건 자손 선택자*/
+/*}*/
+
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
+  /*필드셋과 h1의 블록을 없애 네이버 로고와 검색창을 한줄에*/
+}

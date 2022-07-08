@@ -1,0 +1,32 @@
+@import url(./reset.css);
+
+#Highlights i {
+  color: antiquewhite;
+  padding: 0 50%;
+}
+
+#Highlights h4 {
+  color: antiquewhite;
+}
+
+#Highlights p {
+  color: antiquewhite;
+}
+
+/*부트스트랩에서 vh-100하면 height: 100vh 먹이는 거랑 같음
+대신 아직 패딩 탑을 40vh만큼 먹이는 법은 몰라 일단 두기*/
+.pirogramming17 {
+  height: 100vh;
+  padding-top: 40vh;
+}
+
+.intro {
+  height: 100vh;
+  padding-top: 40vh;
+}
+/***/
+
+.contact {
+  height: 95vh;
+  padding-top: 15vh;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/05a54db67a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./watch.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div id="watch-title">
+        <i class="fa-solid fa-stopwatch"></i>
+        <h3>피로그래밍 스탑워치</h3>
+      </div>
+      <div id="watch-main">
+        <div class="watch-main__time">
+          <span id="minutes">00</span
+          ><!-- 분 -->
+          <span>:</span> <span id="seconds">00</span
+          ><!--초-->
+          <span>.</span> <span id="milliseconds">00</span
+          ><!--밀리초-->
+        </div>
+        <div class="watch-main__btnbar">
+          <ul class="watch-main__btnbar__btn">
+            <li><input id="btn-start" type="button" value="Start" /></li>
+            <li><input id="btn-stop" type="button" value="Stop" /></li>
+            <li><input id="btn-reset" type="button" value="Reset" /></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <footer>
+      <div id="timelaps">
+        <div id="timelaps__title">
+          <ul>
+            <li>
+              <button>
+                <i class="selectAll fa-solid fa-circle-check"></i>
+              </button>
+            </li>
+            <li>구간 기록</li>
+            <li>
+              <button><i class="delete fa-solid fa-trash-can"></i></button>
+            </li>
+          </ul>
+          <div><ul class="recordBox"></ul></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script defer src="./timer.js"></script>
+</html>
