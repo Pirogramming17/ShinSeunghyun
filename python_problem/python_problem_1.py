@@ -18,9 +18,11 @@ def brGame(player):
             for k in range(com):
                 print(f'computer: {k + 1 + num}')
             num += com
+        else:
+            print('computer win!')
 
     if player == 'player':
-        if num < 30:
+        if num < 31:
             while (True):
                 a = input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
                 if a.isnumeric() != True:
@@ -35,6 +37,8 @@ def brGame(player):
                         print(f'player: {i + 1 + num}')
                     num += number
                     break
+        else:
+            print('player win!')
 
 while(True):
     if num < 31:
