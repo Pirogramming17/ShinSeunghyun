@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>홈 화면으로</title>
+  </head>
+  <body>
+    <div class="container">
+        {% for post in posts %}
+        <article id = home-article>
+            <h1><a href=/post/{{post.id}}>{{post.title}}</a></h1>
+            <!--a href=/post/{{post.id}} 이렇게 해야 각 post id 별 디테일 페이지로 이동-->
+            <p>{{post.release}}</p>
+            <p>{{post.genre}}</p>
+            <p>{{post.grade}}</p>
+        </article>
+        {% endfor %}
+    </div>
+
+    <a href="/create">리뷰 작성</a>
+  </body>
+</html>

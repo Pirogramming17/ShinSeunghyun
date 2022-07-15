@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form actionA="/create" method="post">
+      {% csrf_token %}
+      <h2><input type="text" name="title" placeholder="영화 제목" /></h2>
+      <p>
+        <input type="number" name="release" placeholder="개봉 연도" />
+        <input type="text" name="director" placeholder="감독" />
+        <input type="text" name="actor" placeholder="주연" />
+        <input type="text" name="genre" placeholder="장르" />
+        <input type="number" step="0.01" name="grade" placeholder="별점" />
+        <input type="number" name="running_time" placeholder="러닝타임" />
+      </p>
+      <textarea name="content" id="" cols="30" rows="10"></textarea>
+
+      <div><input type="submit" value="저장" /></div>
+    </form>
+
+    <a href="/">리뷰 리스트 페이지</a>
+  </body>
+</html>
