@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>네이버</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon" />
+    <link rel="stylesheet" href="./naver.css" />
+    <!--css와 연결해주는 코드, 링크를 걸어 html에게 css의 존재를 알려줌-->
+    <!--rel = 연결되는 파일 형태, href = 위치-->
+  </head>
+  <body>
+    <header>
+      <!-- 구획 분리, 기존에는 div를 썼지만, 앞으로는 header, nav 처럼 분리해서 쓸 듯 -->
+      <!--<div style="margin: 0 auto; width: 1080px">-->
+      <!--가운데 정렬용 div-->
+      <!--margin: 0(top, bottom) auto(left, right)-->
+      <!--속성들은 반드시 따옴표 안에! 각 속성 구분은 ;(세미콜론)으로-->
+      <!--인라인 스타일(권장은 안함, 파일 분류 권장)-->
+      <div id="header-center">
+        <!--가운데 정렬용 div + css id-->
+        <div>
+          <!-- <div style="display: inline-block">네이버를 시작페이지로</div>
+          <div style="display: inline-block">주니어네이버</div>
+          <div style="display: inline-block">해피빈</div> -->
+          <!--이런 방법도 좋지만, 텍스트는 span을 많이 씀-->
+          <span>네이버를 시작페이지로</span>
+          <span>주니어네이버</span>
+          <span>해피빈</span>
+          <!--span은 기본 display 값이 inline-->
+          <!--inline-자기 콘텐츠만 감쌈-->
+          <!--block-너비를 100% 차지-->
+          <!--inline-block-너비 높이 설정 가능-->
+        </div>
+        <div id="header-search">
+          <a href="http://www.naver.com">
+            <!--a태그 자투리 밑줄 없애기-->
+            <h1>
+              <span>네이버</span>
+              <!-- 부가정보 = 속성(attribute) -->
+            </h1>
+          </a>
+          <h2 class="blind">검색창</h2>
+          <!--스크린 리더기를 위한 서술-->
+          <!--css에서 가려준다-->
+          <fieldset>
+            <legend class="blind">검색</legend>
+            <input />
+            <button>
+              <span class="blind">검색</span>
+              <span id="search-image"></span>
+            </button>
+            <!--class는 여러 번, 다른 클래스와 중복(띄어쓰기)해서 사용 가능-->
+          </fieldset>
+          <!--fieldset은 input을 묶을 때 사용-->
+        </div>
+      </div>
+      <!--</div>-->
+    </header>
+    <nav>
+      <!--네비게이션, 메뉴 있는 곳을 지칭-->
+      <ul>
+        <!-- undefined list, 그냥 정렬 -->
+        <!-- ordered list, 숫자가 적힘-->
+        <li>메일</li>
+        <li>카페</li>
+        <li>블로그</li>
+        <li>지식인</li>
+        <li>쇼핑</li>
+        <li>네이버페이</li>
+        <li>네이버쇼핑</li>
+        <!-- list item -->
+      </ul>
+    </nav>
+    <main>
+      <h2>실시간 검색어</h2>
+      <h3>연합뉴스</h3>
+      <ol>
+        <li>충격) 밤인데 배고파...</li>
+        <li>속보) 야식먹고 얼굴 부어...</li>
+      </ol>
+      <h3>언론사 목록</h3>
+      <ul>
+        <li><img src="./서울경제.png" alt="서울경제" /></li>
+        <li><img src="./한국경제.png" alt="한국경제" /></li>
+        <!-- alt는 설명 -->
+      </ul>
+      <h3>로그인</h3>
+      <h3>법률</h3>
+      <h3>쇼핑</h3>
+      <h6>쇼핑</h6>
+    </main>
+    <footer>
+      <div>공지사항</div>
+      <div>creators</div>
+      <div>회사소개</div>
+    </footer>
+  </body>
+</html>
